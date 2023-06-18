@@ -125,7 +125,7 @@ def preprocess_input(data):
     data['טיפוס תירס'] = data['טיפוס תירס'].map(corn_type)
     
     tmp = data.drop(columns = ['אזור'])
-    tmp = data.drop(columns = ['עונת גידול'])
+    tmp = tmp.drop(columns = ['עונת גידול'])
     tmp = tmp.astype('float64')
     tmp = pd.get_dummies(tmp, columns=categorial_feats, prefix=categorial_feats, prefix_sep='_')
     # Realign new data columns with training data columns
