@@ -161,7 +161,7 @@ def main():
     st.write('הזן את כלל הקלטים המופיעים מטה ולחץ על כפתור התחזית')
 
     # Get the feature names that need validation from df_mappings
-    input_names = list(df_mappings.columns)
+    input_names = ['השקיה','סוג הקרקע','כרב/גידול קודם','אופן הדברה','סוג זבל','טיפוס תירס']
     with_no_meteo = list(set(all_features)-set(meteo_feats))
     inputs = []
     for feature_name in with_no_meteo:
@@ -178,7 +178,7 @@ def main():
                 input_value = st.number_input(feature_name, value=0.0)
         else:
             input_value = st.number_input(feature_name, value=0.0)
-
+        
         inputs.append(input_value)
         
     # Create a button to trigger the prediction
